@@ -8,10 +8,7 @@ const container_width = container.clientWidth;
 const container_height = container.clientHeight;
 
 document.addEventListener("DOMContentLoaded", () =>
-    {createGrid(gridNum)
-    //Add eventListener to change color
-    }
-)
+    {createGrid(gridNum)})
 
 function createGrid(gridNum) {
     for (let i = 0; i < gridNum**2; i++) {
@@ -21,6 +18,8 @@ function createGrid(gridNum) {
         square.style.height = (container_height/gridNum) + "px";
         container.appendChild(square);
     }
+    //Select all the square elements and assign a class to them
+    //Then add event handler to change each of their color
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
@@ -28,6 +27,7 @@ function createGrid(gridNum) {
         })
     });
 }
+
 
 
 //Add button to top of screen to ask for number of squares
@@ -43,6 +43,7 @@ button.addEventListener("click", () => {
             }
         }
         gridNum = parseInt(userInput);
+
         //Then reset the grid with the new grid size
         const squares = document.querySelectorAll(".square");
         squares.forEach((square) => {
@@ -50,4 +51,3 @@ button.addEventListener("click", () => {
         });
         createGrid(gridNum);        
     })
-
