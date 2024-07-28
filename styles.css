@@ -1,0 +1,13 @@
+/* Make the container div element a flexbox*/
+.container {
+    margin:0px;
+    padding:0px;
+    width:500px;
+    height:500px;
+    border: thick solid black;
+    display:flex;
+    flex-flow:row wrap;
+    flex: 1 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+}
