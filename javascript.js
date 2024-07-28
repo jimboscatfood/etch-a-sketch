@@ -25,3 +25,17 @@ squares.forEach((square) => {
         square.style.backgroundColor = "black";
     })
 });
+
+//Add button to top of screen to ask for number of squares
+const button = document.createElement("button");
+button.textContent = "Choose your grid size (from 1 to 100)";
+document.body.insertBefore(button, container);
+button.addEventListener("click", () => {
+        gridNum = prompt("Enter grid size (1-100)");
+        while (gridNum > 100 || gridNum < 1 || !Number.isInteger(gridNum)) {
+            if (gridNum == null) break;
+            else {gridNum = prompt("Enter grid size (1-100)");}
+        }
+    }
+)
+//Then reset the grid with the new grid size
