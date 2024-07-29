@@ -23,11 +23,15 @@ function createGrid(gridNum) {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+            //Make each square a random RGB value
+            //RGB format: rgb(0-255,0-255,0-255)
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            square.style.backgroundColor = "rgb("+ red + "," + green + "," + blue + ")";
         })
     });
 }
-
 
 
 //Add button to top of screen to ask for number of squares
