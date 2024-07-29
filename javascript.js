@@ -21,15 +21,26 @@ function createGrid(gridNum) {
     //Select all the square elements and assign a class to them
     //Then add event handler to change each of their color
     const squares = document.querySelectorAll(".square");
+
+    //INIT i to be 0.1 for the first square
+    let i = 0.1;
+
+
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            //Make each square a random RGB value
-            //RGB format: rgb(0-255,0-255,0-255)
-            let red = Math.floor(Math.random() * 255);
-            let green = Math.floor(Math.random() * 255);
-            let blue = Math.floor(Math.random() * 255);
-            square.style.backgroundColor = "rgb("+ red + "," + green + "," + blue + ")";
-        })
+        //Make each square a random RGB value
+        //RGB format: rgb(0-255,0-255,0-255)
+        let red = Math.floor(Math.random() * 255);
+        let green = Math.floor(Math.random() * 255);
+        let blue = Math.floor(Math.random() * 255);
+        //Increment i if it is smaller than 1
+        if (i <= 1) {
+            i += 0.1
+        }
+        square.style.backgroundColor = "rgba(0,0,0," + i + ")";
+        //black : "rgba(0,0,0," + i + ")"
+        //rgb: "rgba("+ red + "," + green + "," + blue + "," + i + ")"
+            })
     });
 }
 
